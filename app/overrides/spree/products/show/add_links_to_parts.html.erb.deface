@@ -1,8 +1,6 @@
-<!-- insert_after '#cart-form' -->
-<% display_parts = false %>
-<% if @product.parts.any?(&:in_stock?) && display_parts = true %>
-
-  <!-- <h6>Parts included</h6> -->
+<!-- insert_after '#cart-form'
+  disabled -->
+<% if @product.parts.any?(&:in_stock?) %>
 
   <ul id="products" class="inline product-listing" data-hook>
     <% @product.parts.each do |variant| %>

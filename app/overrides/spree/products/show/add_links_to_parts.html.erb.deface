@@ -1,5 +1,6 @@
 <!-- insert_after '#cart-form' -->
-<% if @product.parts.any?(&:in_stock?) %>
+<% display_parts = false %>
+<% if @product.parts.any?(&:in_stock?) && display_parts = true %>
 
   <h6>Parts included</h6>
 

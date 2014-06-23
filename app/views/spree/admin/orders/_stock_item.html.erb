@@ -3,7 +3,7 @@
     <% if item.variant.present? %>
       <td class="item-image"><%= mini_image(item.variant) if item.variant.present? %></td>
       <td class="item-name">
-        <%= item.variant.product.name %><br><%= "(" + variant_options(item.variant).html_simple + ")" unless item.variant.option_values.empty? %>
+        <%= item.variant.product.name %><br><%= "(" + variant_options(item.variant).html_safe + ")" unless item.variant.option_values.empty? %>
         <% if item.part && item.line_item %>
           <i>Part of bundle <%= item.product.sku %></i>
         <% end %>

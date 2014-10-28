@@ -5,7 +5,7 @@ module Spree
       def validate(line_item)
         product = line_item.product
 
-        valid = if product.assembly?
+        valid = if product.present? && product.assembly?
           product.parts.all? do |part|
             Stock::Quantifier.new(part.id).can_supply?(product.count_of(part) * line_item.quantity)
           end
